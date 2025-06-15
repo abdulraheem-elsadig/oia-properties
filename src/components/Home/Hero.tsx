@@ -107,8 +107,11 @@ export default function Hero() {
           <div className="flex items-center justify-center w-full lg:justify-between">
             {/* info section */}
             <div className="hidden gap-4 flex-row backdrop-blur-md bg-white/10 text-white p-6 rounded-sm lg:flex">
-              {info.map((info) => (
-                <div className="flex gap-2 items-center border-r last:border-r-0">
+              {info.map((info, index) => (
+                <div
+                  className="flex gap-2 items-center border-r last:border-r-0"
+                  key={index}
+                >
                   <h2 className="text-4xl font-medium">{info.value}</h2>
                   <p className="w-[100px] uppercase text-sm leading-[16px]">
                     {info.label}
@@ -122,23 +125,24 @@ export default function Hero() {
           </div>
           {/* cusome navigation arrows */}
           <div className="flex justify-between items-center w-full">
-            <Button className="prev-btn size-10 rounded-full  backdrop-blur-md bg-white/10">
+            <Button className="prev-btn size-10 rounded-full  backdrop-blur-md bg-white/20">
               <ChevronLeft className="size-6 text-white" />
             </Button>
-            <Button className="prev-btn size-10 rounded-full  backdrop-blur-md bg-white/10">
+            <Button className="prev-btn size-10 rounded-full  backdrop-blur-md bg-white/20">
               <ChevronRight className="size- text-white" />
             </Button>
           </div>
         </div>
         {/* search part */}
-        <div className="flex flex-col items-center justify-center backdrop-blur-md bg-white/10 rounded-lg p-8 gap-3">
+        <div className="flex flex-col items-center justify-center backdrop-blur-md bg-white/20 rounded-lg p-8 gap-3">
           {/* switch +  clear button */}
           <div className="flex gap-3 w-full justify-center lg:justify-start  ">
             {/* switch */}
             <Tabs value={propertyType} onValueChange={setPropertyType}>
               <TabsList className="rounded-full h-10">
-                {propertyStatus.map((item) => (
+                {propertyStatus.map((item, index) => (
                   <TabsTrigger
+                    key={index}
                     value={item.value}
                     className="cursor-pointer data-[state=active]:bg-[#01062D] data-[state=active]:text-white rounded-full px-6 uppercase font-medium"
                   >

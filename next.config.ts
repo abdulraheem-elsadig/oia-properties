@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   images: {
-    domains: ["www.worldometers.info", "images.unsplash.com"],
+    domains: [
+      "www.worldometers.info",
+      "images.unsplash.com",
+      "source.unsplash.com",
+    ],
   },
 };
 
